@@ -41,7 +41,9 @@ const LoanForm = () => {
       <h1>Loan Application</h1>
       <form className="loan-form" onSubmit={handleSubmit} noValidate>
         <div className="form-group">
-          <label htmlFor="name">Namn:</label>
+          <label htmlFor="name" className="costumer-label">
+            Namn:
+          </label>
           <input
             type="text"
             id="name"
@@ -54,7 +56,9 @@ const LoanForm = () => {
         </div>
 
         <div className="form-group">
-          <label htmlFor="phone">Telefonnummer</label>
+          <label htmlFor="phone" className="costumer-label">
+            Telefonnummer:
+          </label>
           <input
             type="tel"
             id="phone"
@@ -69,7 +73,9 @@ const LoanForm = () => {
         </div>
 
         <div className="form-group">
-          <label htmlFor="age">Ålder</label>
+          <label htmlFor="age" className="costumer-label">
+            Ålder:
+          </label>
           <input
             type="number"
             id="age"
@@ -82,7 +88,9 @@ const LoanForm = () => {
         </div>
 
         <div className="form-group">
-          <label htmlFor="income">Inkomst</label>
+          <label htmlFor="income" className="costumer-label">
+            Inkomst:
+          </label>
           <input
             type="number"
             id="income"
@@ -93,7 +101,9 @@ const LoanForm = () => {
         </div>
 
         <div className="form-group">
-          <label htmlFor="loanAmount">Inkomst</label>
+          <label htmlFor="loanAmount" className="costumer-label">
+            Lånesumma:
+          </label>
           <input
             type="number"
             id="loanAmonut"
