@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const LoanForm = () => {
-  consr[(formData, setFormData)] = useState({
+  const [formData, setFormData] = useState({
     name: "",
     age: "",
     phone: "",
@@ -24,7 +24,7 @@ const LoanForm = () => {
     return newErrors;
   };
 
-  const handleSumbit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     const validationErrors = validate();
     if (Object.keys(validationErrors).length > 0) {
