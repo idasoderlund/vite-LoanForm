@@ -7,7 +7,7 @@ const LoanForm = () => {
     phone: "",
     income: "",
     loanAmount: "",
-    apployment: "",
+    employment: "",
     salaryRange: "",
     purpose: "",
     repaymentPeriod: "",
@@ -17,15 +17,22 @@ const LoanForm = () => {
   const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    const { name, value, type, checked } = e.target;
+    if (type === "checkbox") {
+      setFormData({ ...formData, [name]: checked });
+    } else if (type === "number") {
+      setFormData({ ...formData, [name]: value !== "" ? Number(value) : "" });
+    } else {
+      setFormData({ ...formData, [name]: value });
+    }
   };
 
   const validate = () => {
     const newErrors = {};
     if (!formData.name.trim()) newErrors.name = "Namn är obligatoriskt.";
-    if (!formData.phone.trim()) newErrors.phone = "Namn är obligatoriskt.";
-    if (!formData.age.trim()) newErrors.age = "Namn är obligatoriskt.";
+    if (!formData.phone.trim())
+      newErrors.phone = "Telefonnummer är obligatoriskt.";
+    if (!formData.age.trim()) newErrors.age = "Ålder är obligatoriskt.";
     return newErrors;
   };
 
@@ -46,7 +53,7 @@ const LoanForm = () => {
       <h1>Loan Application</h1>
       <form className="loan-form" onSubmit={handleSubmit} noValidate>
         <div className="form-group">
-          <label htmlFor="name" className="costumer-label">
+          <label htmlFor="name" className="customer-label">
             Namn:
           </label>
           <input
@@ -61,7 +68,22 @@ const LoanForm = () => {
         </div>
 
         <div className="form-group">
-          <label htmlFor="phone" className="costumer-label">
+          <label htmlFor="age" className="customer-label">
+            Ålder:
+          </label>
+          <input
+            type="number"
+            id="age"
+            name="age"
+            value={formData.age}
+            onChange={handleChange}
+            className={errors.age ? "error" : ""}
+          />
+          {errors.age && <span className="error-message">{errors.age}</span>}
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="phone" className="customer-label">
             Telefonnummer:
           </label>
           <input
@@ -78,47 +100,33 @@ const LoanForm = () => {
         </div>
 
         <div className="form-group">
-          <label htmlFor="age" className="costumer-label">
-            Ålder:
-          </label>
-          <input
-            type="number"
-            id="age"
-            name="age"
-            value={formData.age}
-            onChange={handleChange}
-            className={errors.age ? "error" : ""}
-          />
-          {errors.age && <span className="error-message">{errors.age}</span>}
-        </div>
-
-        <div className="form-group">
-          <label htmlFor="apployment" className="costumer-label">
+          <label htmlFor="employment" className="customer-label">
             Har du en nuvarande anställning?
           </label>
           <input
             type="checkbox"
-            id="apployment"
-            name="apployment"
-            value={formData.apployment}
+            id="employment"
+            name="employment"
+            checked={formData.employment}
             onChange={handleChange}
-            className={errors.apployment ? "error" : ""}
+            className={errors.employment ? "error" : ""}
           />
         </div>
 
         <div className="form-group">
-          <label htmlFor="salary-range" className="costumer-label">
+          <label htmlFor="salaryRange" className="customer-label">
             Nutida erhållen inkomst:
           </label>
+
           <select
-            id="salary-range"
-            name="salary-range"
+            id="salaryRange"
+            name="salaryRange"
             value={formData.salaryRange}
             onChange={handleChange}
             className={errors.salaryRange ? "error" : ""}
           >
             <option value="">Choose salary range</option>
-            <option value="less_5000.">Less than 5000Kr</option>
+            <option value="less_5000">Less than 5000Kr</option>
             <option value="5000_10000">5000-10.000Kr</option>
             <option value="10000_20000">10.000-20.000Kr</option>
             <option value="more_20000">More than 20.00Kr</option>
@@ -126,7 +134,7 @@ const LoanForm = () => {
         </div>
 
         <div className="form-group">
-          <label htmlFor="purpose" className="costumer-label">
+          <label htmlFor="purpose" className="customer-label">
             Syftet med lån:
           </label>
           <input
@@ -140,13 +148,13 @@ const LoanForm = () => {
         </div>
 
         <div className="form-group">
-          <label htmlFor="repayment-period" className="cosumter-label">
+          <label htmlFor="repaymentPeriod" className="customer-label">
             Beslutad Återbetalningstid:
           </label>
           <input
             type="number"
             id="repayment-period"
-            name="repayment-period"
+            name="repaymentPeriod"
             value={formData.repaymentPeriod}
             onChange={handleChange}
             className={errors.repaymentPeriod ? "error" : ""}
@@ -154,7 +162,7 @@ const LoanForm = () => {
         </div>
 
         <div className="form-group">
-          <label htmlFor="comments" className="costumer-label">
+          <label htmlFor="comments" className="customer-label">
             Kommentarer:
           </label>
           <input
