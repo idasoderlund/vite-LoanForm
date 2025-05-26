@@ -7,6 +7,11 @@ const LoanForm = () => {
     phone: "",
     income: "",
     loanAmount: "",
+    apployment: "",
+    salaryRange: "",
+    purpose: "",
+    repaymentPeriod: "",
+    comments: "",
   });
 
   const [errors, setErrors] = useState({});
@@ -88,29 +93,78 @@ const LoanForm = () => {
         </div>
 
         <div className="form-group">
-          <label htmlFor="income" className="costumer-label">
-            Inkomst:
+          <label htmlFor="apployment" className="costumer-label">
+            Har du en nuvarande anställning?
           </label>
           <input
-            type="number"
-            id="income"
-            name="income"
-            value={formData.income}
+            type="checkbox"
+            id="apployment"
+            name="apployment"
+            value={formData.apployment}
             onChange={handleChange}
+            className={errors.apployment ? "error" : ""}
           />
         </div>
 
         <div className="form-group">
-          <label htmlFor="loanAmount" className="costumer-label">
-            Lånesumma:
+          <label htmlFor="salary-range" className="costumer-label">
+            Nutida erhållen inkomst:
+          </label>
+          <select
+            id="salary-range"
+            name="salary-range"
+            value={formData.salaryRange}
+            onChange={handleChange}
+            className={errors.salaryRange ? "error" : ""}
+          >
+            <option value="">Choose salary range</option>
+            <option value="less_5000.">Less than 5000Kr</option>
+            <option value="5000_10000">5000-10.000Kr</option>
+            <option value="10000_20000">10.000-20.000Kr</option>
+            <option value="more_20000">More than 20.00Kr</option>
+          </select>
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="purpose" className="costumer-label">
+            Syftet med lån:
+          </label>
+          <input
+            type="text"
+            id="purpose"
+            name="purpose"
+            value={formData.purpose}
+            onChange={handleChange}
+            className={errors.purpose ? "error" : ""}
+          ></input>
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="repayment-period" className="cosumter-label">
+            Beslutad Återbetalningstid:
           </label>
           <input
             type="number"
-            id="loanAmonut"
-            name="loanAmount"
-            value={formData.loanAmount}
+            id="repayment-period"
+            name="repayment-period"
+            value={formData.repaymentPeriod}
             onChange={handleChange}
-          />
+            className={errors.repaymentPeriod ? "error" : ""}
+          ></input>
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="comments" className="costumer-label">
+            Kommentarer:
+          </label>
+          <input
+            type="text"
+            id="comments"
+            name="comments"
+            value={formData.comments}
+            onChange={handleChange}
+            className={errors.comments ? "error" : ""}
+          ></input>
         </div>
 
         <button type="submit"> Skicka</button>
