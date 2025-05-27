@@ -7,7 +7,7 @@ const LoanForm = () => {
     phone: "",
     income: "",
     loanAmount: "",
-    employment: "",
+    employment: false,
     salaryRange: "",
     purpose: "",
     repaymentPeriod: "",
@@ -39,7 +39,10 @@ const LoanForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const validationErrors = validate();
+
     if (Object.keys(validationErrors).length > 0) {
+      const errorMessages = Object.values(validationErrors).join("\n");
+      alert(`Vänligen rätta följande fel:\n${errorMessages}`);
       setErrors(validationErrors);
     } else {
       setErrors({});
@@ -72,6 +75,7 @@ const LoanForm = () => {
             Ålder:
           </label>
           <input
+            style={{ borderRadius: "17px" }}
             type="number"
             id="age"
             name="age"
@@ -165,14 +169,14 @@ const LoanForm = () => {
           <label htmlFor="comments" className="customer-label">
             Kommentarer:
           </label>
-          <input
-            type="text"
+          <textarea
             id="comments"
             name="comments"
             value={formData.comments}
             onChange={handleChange}
             className={errors.comments ? "error" : ""}
-          ></input>
+            rows={3}
+          ></textarea>
         </div>
 
         <button type="submit"> Skicka</button>
