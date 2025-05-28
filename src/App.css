@@ -130,6 +130,12 @@ h1 {
   border-radius: 10px;
 }
 
+.customer-label {
+  color: #fff;
+  font-family: "Poiret One", sans-serif;
+  font-size: 21px;
+}
+
 @media (max-width: 600px) {
   .loan-form {
     display: grid;
