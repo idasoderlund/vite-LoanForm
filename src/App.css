@@ -262,48 +262,61 @@ h1 {
   border-radius: 10px;
 }
 
-@media (max-width: 600px) {
-  .container {
-    display: grid;
-    grid-template-columns: 1fr;
-  }
+.loan-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 7px;
+}
 
-  #name {
-    grid-column: 1;
-    grid-row: 1;
-  }
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
 
-  #age {
-    grid-column: 1;
-    grid-row: 2;
-  }
-  #phone {
-    grid-column: 1;
-    grid-row: 3;
-  }
+.form-group label {
+  margin-bottom: 5px;
+}
 
-  #employment {
-    grid-column: 1;
-    grid-row: 4;
-  }
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+}
 
-  #salaryRange {
-    grid-column: 1;
-    grid-row: 5;
-  }
+#name {
+  grid-column: 1;
+  grid-row: 1;
+}
 
-  #purpose {
-    grid-column: 1;
-    grid-row: 6;
-  }
+#age {
+  grid-column: 1;
+  grid-row: 2;
+}
+#phone {
+  grid-column: 1;
+  grid-row: 3;
+}
 
-  #repayment-period {
-    grid-column: 1;
-    grid-row: 7;
-  }
+#employment {
+  grid-column: 1;
+  grid-row: 4;
+}
 
-  #comments {
-    grid-column: 1;
-    grid-row: 8;
-  }
+#salaryRange {
+  grid-column: 1;
+  grid-row: 5;
+}
+
+#purpose {
+  grid-column: 1;
+  grid-row: 6;
+}
+
+#repayment-period {
+  grid-column: 1;
+  grid-row: 7;
+}
+
+#comments {
+  grid-column: 1;
+  grid-row: 8;
 }
