@@ -60,7 +60,6 @@ const LoanForm = () => {
             Namn:
           </label>
           <input
-            style={{ borderRadius: "10px" }}
             type="text"
             id="name"
             name="name"
@@ -76,7 +75,6 @@ const LoanForm = () => {
             Ålder:
           </label>
           <input
-            style={{ borderRadius: "10px" }}
             type="number"
             id="age"
             name="age"
@@ -92,7 +90,6 @@ const LoanForm = () => {
             Telefonnummer:
           </label>
           <input
-            style={{ borderRadius: "10px" }}
             type="tel"
             id="phone"
             name="phone"
@@ -110,7 +107,6 @@ const LoanForm = () => {
             Har du en nuvarande anställning?
           </label>
           <input
-            style={{ borderRadius: "10px" }}
             type="checkbox"
             id="employment"
             name="employment"
@@ -124,9 +120,7 @@ const LoanForm = () => {
           <label htmlFor="salaryRange" className="customer-label">
             Nutida erhållen inkomst:
           </label>
-
           <select
-            style={{ borderRadius: "10px" }}
             id="salaryRange"
             name="salaryRange"
             value={formData.salaryRange}
@@ -146,7 +140,6 @@ const LoanForm = () => {
             Syftet med lån:
           </label>
           <input
-            style={{ borderRadius: "10px" }}
             type="text"
             id="purpose"
             name="purpose"
@@ -161,7 +154,6 @@ const LoanForm = () => {
             Beslutad Återbetalningstid:
           </label>
           <input
-            style={{ borderRadius: "10px" }}
             type="number"
             id="repayment-period"
             name="repaymentPeriod"
@@ -176,7 +168,6 @@ const LoanForm = () => {
             Kommentarer:
           </label>
           <textarea
-            style={{ borderRadius: "10px" }}
             id="comments"
             name="comments"
             value={formData.comments}

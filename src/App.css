@@ -87,3 +87,14 @@ h1 {
     padding: 10px;
   }
 }
+
+#name,
+#age,
+#phone,
+#employment,
+#salaryRange,
+#purpose,
+#repayment-period,
+#comments {
+  border-radius: 10px;
+}
