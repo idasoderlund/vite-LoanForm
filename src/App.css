@@ -29,6 +29,37 @@ h1 {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #5f123e 0%, #420c2f 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app {
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #fff;
+  font-family: "Playwrite HU", cursive;
+  font-size: 2.7em;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.5);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
 .loan-form {
   display: flex;
   flex-direction: column;
@@ -97,4 +128,176 @@ h1 {
 #repayment-period,
 #comments {
   border-radius: 10px;
+}
+
+@media (max-width: 600px) {
+  .loan-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 7px;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-group label {
+    margin-bottom: 5px;
+  }
+
+  #name {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  #age {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  #phone {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  #employment {
+    grid-column: 1;
+    grid-row: 4;
+  }
+
+  #salaryRange {
+    grid-column: 1;
+    grid-row: 5;
+  }
+
+  #purpose {
+    grid-column: 1;
+    grid-row: 6;
+  }
+
+  #repayment-period {
+    grid-column: 1;
+    grid-row: 7;
+  }
+
+  #comments {
+    grid-column: 1;
+    grid-row: 8;
+  }
+}
+
+.loan-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form.group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+.label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.costumer-label {
+  font-family: "Playwrite HU", cursive;
+  color: #fff;
+}
+
+.input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+}
+
+.input-error {
+  border-color: red;
+}
+
+.error-message {
+  font-family: "Playwrite HU", cursive;
+  color: red;
+  font-size: 0.9em;
+  margin-top: 2px;
+}
+
+.button {
+  padding: 12px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #45a049;
+}
+
+@media (max-width: 600px) {
+  .app {
+    padding: 10px;
+  }
+}
+
+#name,
+#age,
+#phone,
+#employment,
+#salaryRange,
+#purpose,
+#repayment-period,
+#comments {
+  border-radius: 10px;
+}
+
+@media (max-width: 600px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  #name {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  #age {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  #phone {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  #employment {
+    grid-column: 1;
+    grid-row: 4;
+  }
+
+  #salaryRange {
+    grid-column: 1;
+    grid-row: 5;
+  }
+
+  #purpose {
+    grid-column: 1;
+    grid-row: 6;
+  }
+
+  #repayment-period {
+    grid-column: 1;
+    grid-row: 7;
+  }
+
+  #comments {
+    grid-column: 1;
+    grid-row: 8;
+  }
 }
